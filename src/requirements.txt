@@ -1,0 +1,4 @@
+rdkit
+fastapi
+python-multipart
+uvicorn
