@@ -11,7 +11,9 @@ smile_molecules = dict()
 app = FastAPI()
 
 
-def substructure_search(molecules: List[str], pattern_molecule: str) -> List[str]:
+def substructure_search(
+        molecules: List[str],
+        pattern_molecule: str) -> List[str]:
     pattern = Chem.MolFromSmiles(pattern_molecule)
     if not pattern:
         raise ValueError(f"'{pattern_molecule}' isn't smiles string")
@@ -21,9 +23,11 @@ def substructure_search(molecules: List[str], pattern_molecule: str) -> List[str
 
 def add_base(smile_name: str):
     if Chem.MolFromSmiles(smile_name) is None:
-        raise HTTPException(status_code=400, detail=f"{smile_name} isn't smiles string")
+        raise HTTPException(status_code=400,
+                            detail=f"{smile_name} isn't smiles string")
     if smile_name in smile_molecules.values():
-        raise HTTPException(status_code=409, detail=f"Molecule {smile_name} already added")
+        raise HTTPException(status_code=409,
+                            detail=f"Molecule {smile_name} already added")
     unique_id = str(uuid4())
     smile_molecules[unique_id] = smile_name
     return unique_id
@@ -67,7 +71,8 @@ def get_molecules_list():
 
 @app.get("/sub_search")
 def get_search_result(pattern: str):
-    return {"sub_search_result": substructure_search(list(smile_molecules.values()), pattern)}
+    return {"sub_search_result": substructure_search(
+        list(smile_molecules.values()), pattern)}
 
 
 @app.post("/add_from_file")
@@ -78,6 +83,6 @@ def upload_file(file: UploadFile = File(...)):
         for line in smiles_to_add:
             added_molecules.append({"smile_name": line, "id": add_base(line)})
         return {"added": added_molecules}
-    raise HTTPException(status_code=409, detail=f"File contains one or more already added molecules")
-
-
+    raise HTTPException(
+        status_code=409,
+        detail="File contains one or more already added molecules")

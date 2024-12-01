@@ -3,7 +3,8 @@ from src.main import substructure_search
 
 
 def test_correct_data():
-    res = substructure_search(["CCO", "c1ccccc1", "CC(=O)O", "CC(=O)Oc1ccccc1C(=O)O"], "c1ccccc1")
+    res = substructure_search(
+        ["CCO", "c1ccccc1", "CC(=O)O", "CC(=O)Oc1ccccc1C(=O)O"], "c1ccccc1")
     assert res == ["c1ccccc1", "CC(=O)Oc1ccccc1C(=O)O"]
 
 
