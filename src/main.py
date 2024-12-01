@@ -13,11 +13,15 @@ app = FastAPI()
 
 def substructure_search(molecules: List[str], pattern_molecule: str) -> List[str]:
     pattern = Chem.MolFromSmiles(pattern_molecule)
+    if not pattern:
+        raise ValueError(f"'{pattern_molecule}' isn't smiles string")
     return [molecule for molecule in molecules
             if Chem.MolFromSmiles(molecule).HasSubstructMatch(pattern)]
 
 
 def add_base(smile_name: str):
+    if Chem.MolFromSmiles(smile_name) is None:
+        raise HTTPException(status_code=400, detail=f"{smile_name} isn't smiles string")
     if smile_name in smile_molecules.values():
         raise HTTPException(status_code=409, detail=f"Molecule {smile_name} already added")
     unique_id = str(uuid4())
