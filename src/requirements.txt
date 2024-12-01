@@ -2,3 +2,5 @@ rdkit
 fastapi
 python-multipart
 uvicorn
+flake8
+pytest
