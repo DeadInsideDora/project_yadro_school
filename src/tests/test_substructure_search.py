@@ -1,5 +1,5 @@
 import pytest
-from src.main import substructure_search
+from src.substructure_search import substructure_search
 
 
 def test_correct_data():

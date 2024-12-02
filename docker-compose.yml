@@ -1,26 +1,26 @@
 version: '3.8'
 services:
-
-  web1:
-    build: ./src
-    volumes:
-      - ./src:/src
+  db:
+    image: postgres:15
+    container_name: postgres
     environment:
-      SERVER_ID: SERVER-1
-
-  web2:
-    build: ./src
-    volumes:
-      - ./src:/src
-    environment:
-      SERVER_ID: SERVER-2
-
-  nginx:
-    image: nginx:latest
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "80:80"
+      - "5432:5432"
     volumes:
-      - ./nginx:/etc/nginx/conf.d
+      - db_data:/var/lib/postgresql/data
+  web:
+    build: ./src
+    container_name: fastapi_app
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "8000:8000"
     depends_on:
-      - web1
-      - web2
+      - db
+volumes:
+  db_data:

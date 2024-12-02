@@ -4,3 +4,5 @@ python-multipart
 uvicorn
 flake8
 pytest
+SQLAlchemy
+psycopg2
