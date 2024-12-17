@@ -1,9 +1,5 @@
-from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column, String
-
-
-class Base(DeclarativeBase):
-    pass
+from database import Base
 
 
 class Molecules(Base):
