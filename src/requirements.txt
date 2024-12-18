@@ -1,0 +1,10 @@
+rdkit
+fastapi
+python-multipart
+uvicorn
+flake8
+pytest
+SQLAlchemy
+psycopg2
+celery[redis]
+redis
