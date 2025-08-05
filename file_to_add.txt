@@ -1,0 +1,8 @@
+C=C
+CC=O
+CC(CCC(=O)N)CN
+[C-]#N
+C1=CC=CC=C1
+C#N
+CC(C)CO
+C[C@@H](C(=O)O)N

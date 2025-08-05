@@ -1,0 +1,36 @@
+2024-12-17 22:12:34,315 main upload_file INFO Request: POST /add_from_file -F file=UploadFile(filename='file_to_add.txt', size=71, headers=Headers({'content-disposition': 'form-data; name="file"; filename="file_to_add.txt"', 'content-type': 'text/plain'}))
+2024-12-17 22:12:34,384 main upload_file INFO All molecules from file=UploadFile(filename='file_to_add.txt', size=71, headers=Headers({'content-disposition': 'form-data; name="file"; filename="file_to_add.txt"', 'content-type': 'text/plain'})) were successfully added
+2024-12-17 22:13:07,453 main get_molecule_by_id INFO Request: GET //get_by_id/6cd1d7e3-1e7c-4059-816f-3ffeaa2e8bf5
+2024-12-17 22:13:15,055 main get_molecule_by_id INFO Request: GET //get_by_id/6cd1d7e3-1e7c-4059-816f-3ffeaa2e8bf5
+2024-12-17 22:13:36,624 main get_search_result INFO Request: GET /sub_search?pattern={pattern}
+2024-12-17 22:13:54,622 main add_molecule INFO Request: POST /add?smile_name=C
+2024-12-17 22:13:54,633 main add_molecule INFO New molecule C was successfully added with id:0c084968-837c-43d7-b4c4-6568f38ca310
+2024-12-17 22:14:25,595 main add_molecule INFO Request: POST /add?smile_name=C
+2024-12-17 22:14:25,601 main add_molecule ERROR Molecule C already added
+2024-12-17 22:14:32,060 main add_molecule INFO Request: POST /add?smile_name=CCO
+2024-12-17 22:14:32,066 main add_molecule INFO New molecule CCO was successfully added with id:2e1ea126-ce5a-4c79-89ba-f14420f6270e
+2024-12-17 22:14:46,237 main get_search_result INFO Request: GET /sub_search?pattern={pattern}
+2024-12-17 22:14:57,554 main get_search_result INFO Request: GET /sub_search?pattern={pattern}
+2024-12-17 22:15:00,960 main get_search_result INFO Request: GET /sub_search?pattern={pattern}
+2024-12-17 22:16:14,079 main delete_by_id INFO Request: DELETE /delete/fe60cbf1-9e92-470c-937e-aeb0fd1bb31e
+2024-12-17 22:16:14,133 main delete_by_id INFO Molecule was successfully deleted by id=fe60cbf1-9e92-470c-937e-aeb0fd1bb31e
+2024-12-17 22:16:20,775 main get_molecules_list INFO Request: GET /get_all
+2024-12-17 22:30:50,923 main get_molecules_list INFO Request: GET /get_all
+2024-12-17 22:31:33,431 main get_search_result INFO Request: GET /sub_search?pattern=C
+2024-12-17 22:32:00,465 main get_task_result INFO Request: GET /tasks/b65525b5-df18-4027-8325-4f8c6716a38c
+2024-12-17 22:32:22,738 main get_search_result INFO Request: GET /sub_search?pattern=C
+2024-12-17 22:32:39,853 main add_molecule INFO Request: POST /add?smile_name=CCO
+2024-12-17 22:32:39,878 main add_molecule ERROR Molecule CCO already added
+2024-12-17 22:32:58,049 main delete_by_id INFO Request: DELETE /delete/fe60cbf1-9e92-470c-937e-aeb0fd1bb31e
+2024-12-17 22:32:58,053 main delete_by_id ERROR Identifier fe60cbf1-9e92-470c-937e-aeb0fd1bb31e not found
+2024-12-17 22:33:28,844 main upload_file INFO Request: POST /add_from_file -F file=UploadFile(filename='file_to_add.txt', size=71, headers=Headers({'content-disposition': 'form-data; name="file"; filename="file_to_add.txt"', 'content-type': 'text/plain'}))
+2024-12-17 22:33:28,881 main upload_file INFO Molecule C=C already added
+2024-12-17 22:34:02,137 main get_search_result INFO Request: GET /sub_search?pattern=jopa
+2024-12-17 22:34:08,906 main get_search_result INFO Request: GET /sub_search?pattern=jopa
+2024-12-17 22:34:11,446 main get_search_result INFO Request: GET /sub_search?pattern=jopa
+2024-12-17 22:34:12,824 main get_search_result INFO Request: GET /sub_search?pattern=jopa
+2024-12-17 22:35:58,060 main get_search_result INFO Request: GET /sub_search?pattern=jopa
+2024-12-17 22:35:58,953 main get_search_result INFO Request: GET /sub_search?pattern=jopa
+2024-12-17 22:36:05,433 main get_search_result INFO Request: GET /sub_search?pattern=jopa
+2024-12-17 22:36:08,496 main get_search_result INFO Request: GET /sub_search?pattern=zhopa
+2024-12-17 22:36:14,514 main get_search_result INFO Request: GET /sub_search?pattern=zhopa
